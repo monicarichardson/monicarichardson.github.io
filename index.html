@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <link rel="stylesheet" href="main.css"/>
+      <link href="https://fonts.googleapis.com/css?family=Forum" rel="stylesheet">
+      <script src="https://use.fontawesome.com/6fed448ac2.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="animation.js"></script>
+      <title>The World of Snoopy</title>
+   </head>
+   <body>
+      <!-- Navigation Menu -->
+      <nav>
+         <div id="sideNav" class="sideNav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#S1">Home</a>
+            <a href="#S2">Who is Snoopy?</a>
+            <a href="#S3">Snoop-ventures</a>
+            <a href="#S4">Feed Snoopy</a>
+         </div>
+         <span onclick="openNav()"><i class="fa fa-paw" aria-hidden="true"></i></span>
+      </nav>
+      <!-- Main Page Content -->
+      <div id="main">
+        
+         <section id="S1">
+            <h1>Welcome to the World of Snoopy</h1>
+            <p>A fluffy white world of witty westie fun
+            </p>
+            <embed id="snoopyoutline" src="snoopy_outline_864_1152.svg" width = "400" height="600" scale="tofit">
+         </section>
+         
+         <section id="S2">
+            <div class = "row">
+               <div class="column-6">
+                  <h2>Who is Snoopy?</h2>
+                  <p>A wee westie from Hawick
+                   </p>
+                   <p>
+                   about the size of a haggis (except with legs and a tail)
+                  </p>
+                  <p>He will settle for dog food
+                   </p>
+                   <p>
+                   but he'd rather have whatever you're having for dinner
+                  </p>
+                  <p>
+                    He loves taking his humans for long walks, barking at sheep 
+                   </p>
+                   <p>
+                   and burying his treats in strange locations throughout the house
+                  </p>
+               </div>
+               <div class="column-6">
+                  <embed id="spottysnoopy" src=spotty_snoopy.svg width = "500" height="700" scale="tofit">
+               </div>
+            </div>
+         </section>
+         
+         <section id="S3">
+            <div class = "row">
+            <div class="column-6">
+            <h2> Snoopy's Favourite Walk</h2>
+            <div style="width: 100%"><iframe width="80%" height="500" src="https://www.mapsdirections.info/en/draw-route-google-maps/myMap.php?route=104185&amp;width=100%&amp;height=500&amp;hl=en&amp;ie=UTF8&amp;t=&amp;z=15&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"><a href="https://www.mapsdirections.info/en/draw-route-google-maps/">Draw a route map</a> on <a href="https://www.mapsdirections.info/en/">Maps Directions</a></iframe></div><br />
+            </div>
+            <!-- Gallery of Snoopy Images -->
+            <div class="column-6">
+            <h2>Snoop Oot 'n' Aboot</h2>
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+                  <img src="carousel_image_2.JPG">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="carousel_image_3.JPG">
+                </div>
+
+                <div class="mySlides fade">
+                  <img src="carousel_image_7.JPG">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+            </div>
+            <br>
+
+            <div style="text-align:center">
+              <span class="dot" onclick="currentSlide(1)"></span> 
+              <span class="dot" onclick="currentSlide(2)"></span> 
+              <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+            </div>
+            </div>
+         </section>
+         
+         <section id="S4">
+            <h2>Geez a Biscuit</h2>
+             <p>Click below to give Snoopy a biscuit*</p>
+            <span id="CountedClicks">0 Biscuits in the Biscuit Tin</span><br>
+            <button id="FeedSnoopButt" onclick="AddClick(), animateSprite();" style="margin-top:20px">Give Snoopy a Biscuit</button><br>
+            <div id="SnoopSprite">
+                
+            </div>
+            <p>*Disclaimer: We cannot guarantee when your biscuit will reach Snoopy, but all biscuits are inevitably demolished by the Snoopster</p>
+         </section>
+      </div>
+   </body>
+   <script>
+       var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          if (n > slides.length) {slideIndex = 1}    
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+              slides[i].style.display = "none";  
+          }
+          for (i = 0; i < dots.length; i++) {
+              dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+        }
+
+
+        var frameWidth = 500;
+        var frameHeight = 500;
+        var spriteWidth = 8500;
+        var spriteHeight = 500;
+        var spriteElement = document.getElementById("SnoopSprite");
+
+        var curPx = 8500;
+        var ti = 0;
+
+        function animateSprite() {
+        spriteElement.style.backgroundPosition = curPx + 'px 0px';
+        curPx = curPx - frameWidth;
+
+        if (curPx >= spriteWidth) {
+        curPx = 0;
+
+        }
+        ti = setTimeout(animateSprite, 80); 
+
+        }
+
+       
+    var Clicks = 0 ;
+    function AddClick(){
+        Clicks = Clicks + 1;
+        document.getElementById('CountedClicks').innerHTML = Clicks + ' Biscuits in the Biscuit Tin';
+    }
+    </script>
+
+</html>

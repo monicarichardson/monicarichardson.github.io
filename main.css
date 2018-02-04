@@ -1,0 +1,338 @@
+body{
+    background-color: #34353b;
+    margin:0;
+    font-family: 'Forum', cursive;
+    color: white;
+}
+
+*{
+    outline: 0;
+}
+
+
+
+/* Layout CSS */
+
+h1 {
+    margin-top: 0px;
+    margin-bottom: 10px;
+    font-size: 45px;
+}
+
+#S1 p{
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+#S2 p{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.column-6{
+    font-size: 23px;
+    float: left;
+    width: 50%;
+}
+
+#S3 h2{
+    font-size: 1.5em;
+}
+
+#S4 h2{
+    font-size:31.5px;
+}
+#S4 p{
+    font-size: 23px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+#main {
+    transition: margin-left .5s;
+    padding: 20px;
+    text-align: center;
+}
+
+#main section {
+    padding-top: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    min-height: 100vh;
+}
+
+#main section:first-of-type {
+    padding-top: 0px;
+}
+
+
+@media screen and (max-width:768px){
+    .column-6 {
+        width:100%;
+    }
+}
+
+
+/* END layout css */
+
+
+
+
+
+
+
+/* Snoopy Outline CSS */
+
+#snoopyoutline{
+    
+    position: relative;
+    width: 100%;
+}
+
+#Blue_Outline{
+
+    animation: FADE-ANIMATION 6s infinite;
+}
+
+#Pink_Outline{
+
+    animation: FADE-ANIMATION 4s infinite;
+}
+
+@keyframes FADE-ANIMATION {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+/* END Snoopy Outline SVG */
+
+
+/* Spotty Snoopy SVG */
+
+#spottysnoopy {
+    position: relative;
+    width: 100%;
+}
+
+#Pink_Dot_Image_2{
+    
+    animation: antiClock 5s linear infinite;
+}
+
+#Green_Dot_Image_2{
+        animation: circularMotion 3s linear infinite;
+        }
+        
+#Blue_Dot_Image_2{
+        animation: antiClock 3s linear infinite;
+        }
+        
+#Yellow_Dot_Image_2{
+        animation: circularMotion 4s linear infinite;
+        }
+        
+        @keyframes circularMotion {
+    from { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+    to   { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+}
+
+                @keyframes antiClock {
+    from { transform: rotate(0deg) translateX(30px) rotate(0deg); }
+    to   { transform: rotate(-360deg) translateX(30px) rotate(360deg); }
+}
+        
+        @keyframes FADE-ANIMATION {
+    0% {opacity: 0;}
+    50% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+/* END Spotty Snoopy SVG */
+
+/* Snoopy Sprite Animation CSS */
+
+#SnoopSprite{
+    width: 500px;
+    height: 500px;
+    margin: 30px auto;
+    background-image: url(Snoopy_Sprite.png);
+}
+
+#FeedSnoopButt{
+    background-color: #2e44c5; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+
+/* END Snoopy Sprite Animation CSS */
+
+
+/* Side Nav CSS */
+
+.sideNav {
+    height: 100%;
+    width: 250px;
+    z-index: 1;
+    top: 0;
+    position: absolute;
+    height:100vh;
+    overflow-y: hidden;
+    left: -260px;
+    z-index:9999;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+}
+
+.sideNav a {
+    outline: 0;
+    padding: 30px 30px 30px 32px;
+    text-decoration: none;
+    text-align: right;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+nav { 
+    position: fixed;
+    z-index: 10;
+}
+
+nav span {
+    outline 0;
+    font-size: 50px;
+    padding: 20px 0px 0px 20px;
+    display: block;
+    position: relative;
+    z-index: 8;
+}
+
+.sideNav a:hover {
+    color: #f1f1f1;
+}
+
+.sideNav .closebtn {
+    outline:0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+@media screen and (max-width: 450px) {
+    .sideNav {padding-top: 15px;}
+    .sideNav a {font-size: 18px;}
+    
+}
+/* END sidenav css */
+
+
+/* Slideshow CSS */
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+    margin-left: 170px;
+    margin-right:170px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left:0;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+  .prev, .next,.text {font-size: 11px}
+}
+
+/* END Slideshow CSS */
